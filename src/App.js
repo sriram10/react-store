@@ -1,5 +1,4 @@
 import './App.css';
-import ProductListingPage from './pages/ProductListingPage';
 import {
   BrowserRouter,
   Switch,
@@ -18,8 +17,13 @@ function App() {
       <div>
         <ul>
           <li><Link to="/">Home</Link></li>
+          <li><Link to="/login">Login</Link></li>
           <li><Link to="/about">About</Link></li>
-          <li><Link to="/faq">FAQ</Link></li>
+          <li><Link to={{
+            pathname: "/faq",
+            search: "?id=234",
+            state: { user: { name: "Test" } }
+          }}>FAQ</Link></li>
           <li><Link to="/products">Products</Link></li>
         </ul>
         <GoBackButton />

@@ -80,6 +80,7 @@ class FaqPage extends React.Component {
 	
 	render() {
 		const { activeTab, panels } = this.state;
+    console.log('FAQ >> ', this.props)
 		return (
 			<div className='accordion' role='tablist'>
 				{panels.map((panel, index) =>
