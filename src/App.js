@@ -9,22 +9,19 @@ import {
 import RoutesContainer from './components/RoutesContainer';
 import PageTitle from './components/PageTitle';
 import GoBackButton from './components/GoBackButton';
+import { Container } from 'react-bootstrap';
+import Header from './components/Header';
 
 
 function App() {
   return (
     <BrowserRouter>
       <PageTitle name="Store" />
-      <div>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/faq">FAQ</Link></li>
-          <li><Link to="/products">Products</Link></li>
-        </ul>
+      <Container>
+        <Header />
         <GoBackButton />
         {/* <ProductListingPage /> */}
-      </div>
+      </Container>
       <RoutesContainer />
     </BrowserRouter>
   );
