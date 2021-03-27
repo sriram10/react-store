@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { productList } from '../assets/productsList';
 import CategoryFilter from '../components/CategoryFilter';
 import ProductCard from '../components/ProductCard';
+import BannerSlider from '../components/BannerSlider';
 
 /**
  * Page contains
@@ -65,6 +66,7 @@ class ProductListingPage extends Component {
     
     return (
       <Container>
+        <BannerSlider/>
         <Row>
           <Col>
             <CategoryFilter
