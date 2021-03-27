@@ -9,6 +9,10 @@ body {
   background-color: #f1f1f1;
 }
 
+#root {
+  width: 90%;
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -22,7 +26,6 @@ code {
 body {
   display: flex;
   justify-content: center;
-  padding: 50px 0;
   background-color: #fcfcfc;
   min-height: 100vh;
   font-size: 16px;
@@ -34,7 +37,7 @@ body {
 }
 .accordion {
   width: 100%;
-  max-width: 470px;
+  max-width: 900px;
 }
 .panel {
   background-color: #f0ebe1;
