@@ -1,9 +1,13 @@
 import React from 'react';
 import CategoryFilter from './CategoryFilter';
+import ProductNameFilter from './ProductNameFilter';
 
-const FilterContainer = ({ data, selectedCategories=[], onChange }) => {
+const FilterContainer = ({ data, selectedCategories=[], onChange, searchText, onSearchChange }) => {
   return (
-    <CategoryFilter {...{ data, selectedCategories, onChange }} />
+    <>
+      <ProductNameFilter {...{ searchText, onSearchChange }} />
+      <CategoryFilter {...{ data, selectedCategories, onChange }} />
+    </>
   )
 }
 

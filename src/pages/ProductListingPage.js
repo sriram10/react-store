@@ -22,6 +22,7 @@ class ProductListingPage extends Component {
     this.setState({
       data: productList.data,
       selectedCategories: [],
+      searchText: '',
     });
   }
 
@@ -61,6 +62,10 @@ class ProductListingPage extends Component {
     });
   };
 
+  onSearchChange = e => this.setState({
+    searchText: e.target.value
+  })
+
   render() {
     return (
       <Container>
@@ -68,8 +73,10 @@ class ProductListingPage extends Component {
           <Col sm={3}>
             <FilterContainer
               data={this.getCategoriesList()}
+              searchText={this.searchText}
               selectedCategories={this.state.selectedCategories}
               onChange={this.onCategoryClick}
+              onSearchChange={this.onSearchChange}
             />
           </Col>
           <Col sm={9}>
@@ -79,6 +86,11 @@ class ProductListingPage extends Component {
                   .filter((product) =>
                     this.state.selectedCategories.length
                       ? this.state.selectedCategories.includes(product.category)
+                      : true
+                  )
+                  .filter((product) =>
+                    this.state.searchText.length
+                      ? product.name.toLowerCase().includes(this.state.searchText.toLowerCase())
                       : true
                   )
                   .map((product) => {
