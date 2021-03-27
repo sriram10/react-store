@@ -7,11 +7,13 @@ import {
   Link
 } from "react-router-dom";
 import RoutesContainer from './components/RoutesContainer';
+import TopMenu from './components/TopMenu';
 
 
 function App() {
   return (
     <BrowserRouter>
+          <TopMenu />
       <div>
         <ul>
           <li><Link to="/">Home</Link></li>
