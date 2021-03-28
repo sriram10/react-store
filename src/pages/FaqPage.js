@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { faqData } from '../assets/faqData';
+import { Container, Row, Col } from 'react-bootstrap';
 import PageTitle from '../components/PageTitle';
 
 class Accordion extends React.Component {
@@ -33,6 +34,7 @@ class Accordion extends React.Component {
 		return (
       <>
       <PageTitle name="FAQ" />
+	   <Container>
 			<div className='panel'
 				role='tabpanel'
 				aria-expanded={ isActive }>
@@ -49,6 +51,7 @@ class Accordion extends React.Component {
 					</p>
 				</div>
 			</div>
+			</Container>
 			</>
 		);
 	}
@@ -81,6 +84,7 @@ class FaqPage extends React.Component {
 	render() {
 		const { activeTab, panels } = this.state;
 		return (
+			<Container>
 			<div className='accordion' role='tablist'>
 				{panels.map((panel, index) =>
 					<Accordion
@@ -92,6 +96,7 @@ class FaqPage extends React.Component {
 					/>
 				)}
 			</div>
+			</Container>
 		);
 	}
 }
