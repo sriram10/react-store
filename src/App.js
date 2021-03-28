@@ -9,7 +9,6 @@ import {
 import RoutesContainer from './components/RoutesContainer';
 import PageTitle from './components/PageTitle';
 import GoBackButton from './components/GoBackButton';
-import Slider from './components/Slider';
 
 
 function App() {
@@ -26,12 +25,6 @@ function App() {
         <GoBackButton />
         {/* <ProductListingPage /> */}
       </div>
-      <Slider>
-        <div><h2>Slide1</h2>Slide 1 is plain</div>
-        <div><h2>Slide2</h2>Slide 2 is plain</div>
-        <div><h2>Slide3</h2>Slide 3 is plain</div>
-        <div><h2>Slide4</h2>Slide 4 is plain</div>
-      </Slider>
       <RoutesContainer />
     </BrowserRouter>
   );
