@@ -19,7 +19,7 @@ code {
 *:before {
   box-sizing: inherit;
 }
-body {
+/* body {
   display: flex;
   justify-content: center;
   padding: 50px 0;
@@ -31,7 +31,7 @@ body {
   color: #372717;
   box-sizing: border-box;
   overflow-y: scroll;
-}
+} */
 .accordion {
   width: 100%;
   max-width: 470px;
