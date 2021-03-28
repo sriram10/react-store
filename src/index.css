@@ -19,22 +19,9 @@ code {
 *:before {
   box-sizing: inherit;
 }
-body {
-  display: flex;
-  justify-content: center;
-  padding: 50px 0;
-  background-color: #fcfcfc;
-  min-height: 100vh;
-  font-size: 16px;
-  line-height: 1.4;
-  font-family: 'Montserrat', sans-serif;
-  color: #372717;
-  box-sizing: border-box;
-  overflow-y: scroll;
-}
 .accordion {
   width: 100%;
-  max-width: 470px;
+
 }
 .panel {
   background-color: #f0ebe1;
