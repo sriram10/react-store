@@ -1,24 +1,21 @@
-import React, {useState} from "react";
-import { Form, Button } from 'react-bootstrap'
-import '../App.css'
+import React from "react";
+// import { Form, Button } from 'react-bootstrap'
+// import '../App.css'
 
+// import React from "react";
+// import ReactDOM from "react-dom";
 
-// const checkSubmit = (e) => {
-//     e.preventDefault();
-//     if(state.password === state.confirmPassword) {
-//         sendDetailsToServer()    
-//     } else {
-//         props.showError('Passwords do not match');
-//     }
-// }
+// import ValidatedLoginForm from "../components/ValidateLoginForm";
 
-class Login extends React.Component {
-
-    render() {  
-        return (
-            
-        );
-    };
+class LoginForm extends React.Component {
+    render(){
+  return (
+    <div className="App">
+      <h1>Validated Login Form</h1>
+      {/* <ValidatedLoginForm /> */}
+    </div>
+  );
+};
 }
-export default Login
+export default LoginForm
 

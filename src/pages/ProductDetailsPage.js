@@ -1,7 +1,9 @@
 import React from 'react';
 import '../App.css'
+import { Button } from "react-bootstrap"
 
 class ProductDetailsPage extends React.Component{
+
     state = {
         product: [
             {
@@ -13,7 +15,8 @@ class ProductDetailsPage extends React.Component{
             }
         ]
     }
-    render() {
+    render() {  
+   
         const {product} = this.state;
             // console.log(product);
         return(
@@ -33,6 +36,9 @@ class ProductDetailsPage extends React.Component{
                                     <h2>{item.title}</h2>
                                 </div>
                             </div>
+                            <Button variant="primary" type="submit">
+                                Checkout
+                             </Button>
                         </div>
                     ))
                 }
