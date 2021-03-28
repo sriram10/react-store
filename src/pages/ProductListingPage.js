@@ -19,6 +19,11 @@ class ProductListingPage extends Component {
     data: []
   }
 
+  constructor(props) {
+    super(props);
+    console.log(props);
+  }
+
   componentDidMount() {
     this.setState({
       data: productList.data,

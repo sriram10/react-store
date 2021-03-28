@@ -1,5 +1,25 @@
 import './App.css';
 import ProductListingPage from './pages/ProductListingPage';
+<<<<<<< HEAD
+import Header from './components/Header';
+import { Col, Container, Row } from 'react-bootstrap';
+import Footer from './components/Footer';
+
+function App() {
+  return (
+    <div>
+      <Container>
+        <Row>
+          <Col><Header /></Col>
+        </Row>        
+      </Container>
+      <Container>
+        <Row>
+          <Col><Footer /></Col>
+        </Row>        
+      </Container>
+    </div>
+=======
 import {
   BrowserRouter,
   Switch,
@@ -27,6 +47,7 @@ function App() {
       </div>
       <RoutesContainer />
     </BrowserRouter>
+>>>>>>> a04b5427da7d12f3f72445a9ebda4db20ba0704c
   );
 }
 
