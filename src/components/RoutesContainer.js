@@ -4,6 +4,7 @@ import {
   Route,
 } from "react-router-dom";
 import FaqPage from '../pages/FaqPage';
+import ProductDetailsPage from '../pages/ProductDetailsPage';
 import ProductListingPage from '../pages/ProductListingPage';
 import PageTitle from './PageTitle';
 
@@ -14,8 +15,9 @@ const RoutesContainer = () => {
       <Route exact path="/" render={() => <h1>Home</h1>} />
       <Route exact path="/about" render={() => <h1>About</h1>} />
       <Route exact path="/faq" component={FaqPage} />
-      <Route exact path="/products" component={ProductListingPage} />
-      <Route exact path="/products/:product/:id?" render={(props) => {
+      <Route exact path="/products/list" component={ProductListingPage} />
+      <Route exact path="/products/:id" component={ProductDetailsPage} />
+      <Route exact path="/products/product/:id" render={(props) => {
         const d = props.match.params;
         return (
           <>
