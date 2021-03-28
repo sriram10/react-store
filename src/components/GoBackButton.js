@@ -4,7 +4,7 @@ import { useHistory } from "react-router"
 const GoBackButton = () => {
   const history = useHistory()
   return (
-    <Button onClick={() => {
+    <Button  onClick={() => {
       history.goBack()
     }}>&lt; Go Back</Button>
   )
