@@ -36,8 +36,8 @@ class Slider extends React.Component {
   class Slide extends React.Component {
     render() {
       return (
-        <div>
-          <h1>Simple slider react</h1>
+        <div className="simple-slider">
+          <h1>Simple React Slider</h1>
           <Slider>
             <div><img src={image1} alt="Slide1" /></div>
             <div><img src={image2} alt="Slide2" /></div>
