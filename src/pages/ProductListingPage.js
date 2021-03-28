@@ -18,6 +18,10 @@ class ProductListingPage extends Component {
     data: []
   }
 
+  constructor(props) {
+    super(props);
+  }
+
   componentDidMount() {
     this.setState({
       data: productList.data,
@@ -60,48 +64,60 @@ class ProductListingPage extends Component {
   }
 
   render() {
-    
+    console.log(this.props)
     return (
       <Container>
         <Row>
-          <Col>
-            <CategoryFilter
-              data={this.getCategoriesList()}
-              selectedCategories={this.state.selectedCategories}
-              onChange={this.onCategoryClick}
-              />
+          <Col md={4}>
+            <Container>
+              <Row>
+                <Col>
+                  <CategoryFilter
+                      data={this.getCategoriesList()}
+                      selectedCategories={this.state.selectedCategories}
+                      onChange={this.onCategoryClick}
+                      />
+                  </Col>
+                </Row>
+            </Container>
+          </Col>
+          <Col md={8}>
+              <Container>
+                <Row>
+                  {
+                    Array.isArray(this.state.data) &&
+                    this.state.data
+                      //.filter(product => this.state.selectedCategories.length ? this.state.selectedCategories.includes(product.category) : true)
+                      .filter(product => product.category == this.props.location.state.urlparam)
+                      .map(product => {
+                      return (
+                        <Col key={product.id}>
+                          <ProductCard
+                            id={product.id}
+                            name={product.name}
+                            image={product.image}
+                            price={product.price ? product.price : product.variants?.[0].price}
+                            onClick={(e) => {
+                              e.preventDefault()
+                              e.stopPropagation()
+                              this.onProductClick(product)
+                            }}
+                            onAdd2Cart={(e) => {
+                              e.preventDefault()
+                              e.stopPropagation()
+                              this.onAdd2Cart(product)
+                            }}
+                          />
+                        </Col>
+                      )
+                    })
+                  }
+                </Row>
+          </Container>
           </Col>
         </Row>
-        <Row>
-          {
-            Array.isArray(this.state.data) &&
-            this.state.data
-              .filter(product => this.state.selectedCategories.length ? this.state.selectedCategories.includes(product.category) : true)
-              .map(product => {
-              return (
-                <Col key={product.id}>
-                  <ProductCard
-                    id={product.id}
-                    name={product.name}
-                    image={product.image}
-                    price={product.price ? product.price : product.variants?.[0].price}
-                    onClick={(e) => {
-                      e.preventDefault()
-                      e.stopPropagation()
-                      this.onProductClick(product)
-                    }}
-                    onAdd2Cart={(e) => {
-                      e.preventDefault()
-                      e.stopPropagation()
-                      this.onAdd2Cart(product)
-                    }}
-                  />
-                </Col>
-              )
-            })
-          }
-        </Row>
       </Container>
+      
     )
   }
 }
