@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import { productList } from '../assets/productsList';
 import CategoryFilter from '../components/CategoryFilter';
 import ProductCard from '../components/ProductCard';
@@ -21,7 +20,6 @@ class ProductListingPage extends Component {
 
   constructor(props) {
     super(props);
-    console.log(props);
   }
 
   componentDidMount() {
@@ -32,8 +30,7 @@ class ProductListingPage extends Component {
   }
 
   onProductClick = (product = {}) => {
-    const { history, match, location } = this.props;
-    history.push(`/products/${product.name}/${product.id}`)
+    alert(product?.name)
   }
 
   onAdd2Cart = (product = {}) => {
@@ -67,46 +64,60 @@ class ProductListingPage extends Component {
   }
 
   render() {
-    
+    console.log(this.props)
     return (
       <Container>
         <Row>
-          <Col>
-            <CategoryFilter
-              data={this.getCategoriesList()}
-              selectedCategories={this.state.selectedCategories}
-              onChange={this.onCategoryClick}
-              />
+          <Col md={4}>
+            <Container>
+              <Row>
+                <Col>
+                  <CategoryFilter
+                      data={this.getCategoriesList()}
+                      selectedCategories={this.state.selectedCategories}
+                      onChange={this.onCategoryClick}
+                      />
+                  </Col>
+                </Row>
+            </Container>
+          </Col>
+          <Col md={8}>
+              <Container>
+                <Row>
+                  {
+                    Array.isArray(this.state.data) &&
+                    this.state.data
+                      //.filter(product => this.state.selectedCategories.length ? this.state.selectedCategories.includes(product.category) : true)
+                      .filter(product => product.category == this.props.location.state.urlparam)
+                      .map(product => {
+                      return (
+                        <Col key={product.id}>
+                          <ProductCard
+                            id={product.id}
+                            name={product.name}
+                            image={product.image}
+                            price={product.price ? product.price : product.variants?.[0].price}
+                            onClick={(e) => {
+                              e.preventDefault()
+                              e.stopPropagation()
+                              this.onProductClick(product)
+                            }}
+                            onAdd2Cart={(e) => {
+                              e.preventDefault()
+                              e.stopPropagation()
+                              this.onAdd2Cart(product)
+                            }}
+                          />
+                        </Col>
+                      )
+                    })
+                  }
+                </Row>
+          </Container>
           </Col>
         </Row>
-        <Row>
-          {
-            Array.isArray(this.state.data) &&
-            this.state.data
-              .filter(product => this.state.selectedCategories.length ? this.state.selectedCategories.includes(product.category) : true)
-              .map(product => {
-              return (
-                <Col key={product.id}>
-                  <ProductCard
-                    id={product.id}
-                    name={product.name}
-                    image={product.image}
-                    price={product.price ? product.price : product.variants?.[0].price}
-                    onClick={(e) => {
-                      this.onProductClick(product)
-                    }}
-                    onAdd2Cart={(e) => {
-                      e.preventDefault()
-                      e.stopPropagation()
-                      this.onAdd2Cart(product)
-                    }}
-                  />
-                </Col>
-              )
-            })
-          }
-        </Row>
       </Container>
+      
     )
   }
 }

@@ -10,10 +10,10 @@ export const Menus = {
         },
         {
             id: 2,
-            name: "Desktops",
-            url: "/product/desktops",
+            name: "Tshirts",
+            url: "/product/tshirts",
             components: 'ProductListingPage',
-            search: 'desktops',
+            search: 'Tshirts',
             parent: 0
         },
         {
@@ -21,15 +21,15 @@ export const Menus = {
             name: "Laptops",
             url: "/product/laptops",
             components: 'ProductListingPage',
-            search: 'laptops',
+            search: 'Laptops',
             parent: 0
         },
         {
             id: 4,
-            name: "Tablets",
-            url: "/product/tablets",
+            name: "Mobiles",
+            url: "/product/mobiles",
             components: 'ProductListingPage',
-            search: 'tablets',
+            search: 'Mobiles',
             parent: 0
         },
         {

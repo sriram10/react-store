@@ -20,7 +20,7 @@ const TopMenu = () => {
                     <Nav className="mr-auto">
                         <ul>
                             {menuData.map((menu) =>
-                                <li><Link to={menu.url}>{menu.name}</Link></li>
+                                <li><Link to={{pathname:menu.url,state:{'urlparam':menu.search}}}>{menu.name}</Link></li>
                             )}                    
                         </ul>                        
                     </Nav>
