@@ -1,0 +1,11 @@
+.footer-main{
+    background-color: rgb(57, 57, 61);
+    color: white;
+  }
+  .hr{
+      max-width: fit-content;
+      height: 2px;
+      color: white;
+
+  }
+  

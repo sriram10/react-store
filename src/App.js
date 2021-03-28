@@ -1,31 +1,26 @@
-import './App.css';
-import ProductListingPage from './pages/ProductListingPage';
-import {
-  BrowserRouter,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import RoutesContainer from './components/RoutesContainer';
+// import logo from './logo.svg';
+import './App.css';  
+import RouteContainer from './components/RouteContainer';
+import { BrowserRouter, Link } from 'react-router-dom';
 import PageTitle from './components/PageTitle';
-import GoBackButton from './components/GoBackButton';
-
 
 function App() {
   return (
     <BrowserRouter>
-      <PageTitle name="Store" />
-      <div>
+    <PageTitle name = "Home" />
+      <div className = "hamburger">
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/faq">FAQ</Link></li>
-          <li><Link to="/products">Products</Link></li>
+          <li><Link to = "/">Home</Link></li>
+          <li><Link to = "/login">Login</Link></li>
+          <li><Link to = "/about">About</Link></li>
+          <li><Link to = "/faq">FAQ</Link></li>
+          <li><Link to = "/product">Products</Link></li>
+          <li><Link to = "/footer">Footer</Link></li>
+          <li><Link to = "/slider">carousel</Link></li>
+          <li><Link to = "/productpage">Product Page</Link></li>
         </ul>
-        <GoBackButton />
-        {/* <ProductListingPage /> */}
       </div>
-      <RoutesContainer />
+      <RouteContainer />
     </BrowserRouter>
   );
 }
