@@ -9,24 +9,25 @@ import {
 import RoutesContainer from './components/RoutesContainer';
 import PageTitle from './components/PageTitle';
 import GoBackButton from './components/GoBackButton';
+import Header from './components/Header';
+import TopMenu from './components/TopMenu';
+import Footer from './components/Footer';
+
 
 
 function App() {
   return (
+    <>
+    <Header />
     <BrowserRouter>
-      <PageTitle name="Store" />
-      <div>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/faq">FAQ</Link></li>
-          <li><Link to="/products">Products</Link></li>
-        </ul>
-        <GoBackButton />
-        {/* <ProductListingPage /> */}
-      </div>
+    
+
+      <TopMenu />
+      
       <RoutesContainer />
     </BrowserRouter>
+    <Footer />
+    </>
   );
 }
 

@@ -4,6 +4,7 @@ import {
   Route,
 } from "react-router-dom";
 import FaqPage from '../pages/FaqPage';
+import HomePage from '../pages/HomePage';
 import ProductListingPage from '../pages/ProductListingPage';
 import PageTitle from './PageTitle';
 
@@ -11,7 +12,7 @@ import PageTitle from './PageTitle';
 const RoutesContainer = () => {
   return (
     <Switch>
-      <Route exact path="/" render={() => <h1>Home</h1>} />
+      <Route exact path="/" component={HomePage}/>
       <Route exact path="/about" render={() => <h1>About</h1>} />
       <Route exact path="/faq" component={FaqPage} />
       <Route exact path="/products" component={ProductListingPage} />
