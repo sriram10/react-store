@@ -7,7 +7,6 @@ import {
   Link
 } from "react-router-dom";
 import RoutesContainer from './components/RoutesContainer';
-import Slider from './components/Slider';
 
 
 function App() {
@@ -24,10 +23,8 @@ function App() {
         </ul>
         {/* <ProductListingPage /> */}
       </div>
-      <RoutesContainer /><div>{Slider}</div>
-
+      <RoutesContainer />
     </BrowserRouter>
-    
   );
 }
 
