@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { faqData } from '../assets/faqData';
 import PageTitle from '../components/PageTitle';
 
+
 class Accordion extends React.Component {
 	constructor(props) {
 		super(props);
@@ -32,6 +33,7 @@ class Accordion extends React.Component {
 
 		return (
       <>
+	
       <PageTitle name="FAQ" />
 			<div className='panel'
 				role='tabpanel'
@@ -49,6 +51,7 @@ class Accordion extends React.Component {
 					</p>
 				</div>
 			</div>
+			
 			</>
 		);
 	}
