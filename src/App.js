@@ -9,7 +9,7 @@ import {
 import RoutesContainer from './components/RoutesContainer';
 import PageTitle from './components/PageTitle';
 import GoBackButton from './components/GoBackButton';
-
+import Login from "./components/Login";
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
           <li><Link to="/about">About</Link></li>
           <li><Link to="/faq">FAQ</Link></li>
           <li><Link to="/products">Products</Link></li>
+          <li><Link to="/login">Login</Link></li>
         </ul>
         <GoBackButton />
         {/* <ProductListingPage /> */}
