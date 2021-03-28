@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { productList } from '../assets/productsList';
 import CategoryFilter from '../components/CategoryFilter';
 import ProductCard from '../components/ProductCard';
-
+import Pricefilter from '../components/PriceFilter';
 /**
  * Page contains
  *  - ProductCard
@@ -44,8 +44,10 @@ class ProductListingPage extends Component {
   }
 
   onCategoryClick = (category) => {
+    console.log(category)
     this.setState(prevState => {
       const isPresent = prevState.selectedCategories.includes(category);
+      console.log(isPresent)
       let result = [];
       if(isPresent) {
         result = prevState.selectedCategories.filter(item => item !== category);
@@ -72,6 +74,9 @@ class ProductListingPage extends Component {
               />
           </Col>
         </Row>
+      <Row>
+        <Pricefilter/>
+      </Row>
         <Row>
           {
             Array.isArray(this.state.data) &&

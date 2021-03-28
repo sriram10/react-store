@@ -6,3 +6,85 @@
   width: 100%;
 }
 
+.firstContainer{
+  padding: 10px;
+  display: flex;
+  background-color: rgb(238,238,238);
+  padding-left: 12%;
+}
+.firstContainer span{
+  color: rgb(173, 173, 173);
+  padding-right: 30%;
+}
+.firstContainer ul{
+  display: flex;
+  color: rgb(173, 173, 173);
+  list-style: none;
+}
+.firstContainer ul li{
+  padding-left: 10px;
+}
+.secondContainer{
+  margin-top: 10px;
+  display: flex;
+}
+.thirdHeader ul{
+  width: 76%;
+  display: flex;
+  padding: 10px;
+  list-style: none;
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+  padding-left: 5%;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-left: 12%;
+}
+.thirdHeader ul li{
+  padding-left: 25px;
+  text-decoration: none;
+
+}
+.thirdHeader ul li Link{
+  text-decoration: none;
+}
+#link{
+  text-decoration: none;
+  list-style: none;
+}
+.carousel1{
+  width: 76%;
+  border-radius: 10px;
+  margin-left: 12%;
+  box-shadow: rgb(241, 241, 241) 3px 3px, rgb(241, 241, 241) -3px -3px;
+  margin-bottom: 15px;
+}
+.footer{
+
+ 
+  background-color: rgb(48,48,48);
+}
+.inner{
+  display: flex;
+}
+hr{
+  color: #fff;
+}
+.inner ul{
+  color: #fff;
+  margin: 7%;
+  list-style: none;
+}
+.inner ul li{
+  margin: -12px;
+  font-size: 13px;
+}
+#button{
+  width: 100%;
+}
+h1{
+  color: rgb(35,149,194);
+}
+#search{
+  width: 80%;
+}
