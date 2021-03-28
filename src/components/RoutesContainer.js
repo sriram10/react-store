@@ -5,7 +5,6 @@ import {
 } from "react-router-dom";
 import ProductListingPage from '../pages/ProductListingPage';
 import Register from '../components/Register';
-import Slider from '../components/Slider';
 
 const RoutesContainer = () => {
   return (
