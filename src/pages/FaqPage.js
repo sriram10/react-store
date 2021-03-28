@@ -81,6 +81,7 @@ class FaqPage extends React.Component {
 	render() {
 		const { activeTab, panels } = this.state;
 		return (
+		<div className="accordion_body">	
 			<div className='accordion' role='tablist'>
 				{panels.map((panel, index) =>
 					<Accordion
@@ -91,6 +92,7 @@ class FaqPage extends React.Component {
 						activateTab={ this.activateTab.bind(null, index) }
 					/>
 				)}
+			</div>
 			</div>
 		);
 	}
