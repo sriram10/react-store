@@ -8,6 +8,11 @@
 img {
   width: 100%;
 }
+
+img.d-inline-block.align-top.logo {
+  width: 100px;
+}
+
 .variant-btn-container.row {
   margin-left: 0;
   margin-right: 0;
