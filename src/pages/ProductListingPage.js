@@ -28,7 +28,7 @@ class ProductListingPage extends Component {
 
   onProductClick = (product = {}) => {
     const { history, match, location } = this.props;
-    history.push(`/products/${product.name}/${product.id}`)
+    history.push(`/products/${product.id}`)
   }
 
   onAdd2Cart = (product = {}) => {
