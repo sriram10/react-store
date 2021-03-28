@@ -7,6 +7,7 @@ import {
   Link
 } from "react-router-dom";
 import RoutesContainer from './components/RoutesContainer';
+import Slider from './components/Slider';
 
 
 function App() {
@@ -19,11 +20,14 @@ function App() {
           <li><Link to="/faq">FAQ</Link></li>
           <li><Link to="/listing">Products</Link></li>
           <li><Link to="/listing/mobile">Mobile</Link></li>
+          <li><Link to="/sign-up">Register</Link></li>
         </ul>
         {/* <ProductListingPage /> */}
       </div>
-      <RoutesContainer />
+      <RoutesContainer /><div>{Slider}</div>
+
     </BrowserRouter>
+    
   );
 }
 

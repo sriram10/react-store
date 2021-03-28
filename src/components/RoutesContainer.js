@@ -4,6 +4,8 @@ import {
   Route,
 } from "react-router-dom";
 import ProductListingPage from '../pages/ProductListingPage';
+import Register from '../components/Register';
+import Slider from '../components/Slider';
 
 const RoutesContainer = () => {
   return (
@@ -13,6 +15,7 @@ const RoutesContainer = () => {
       <Route exact path="/faq" render={() => <h1>Faq</h1>} />
       <Route exact path="/listing" component={ProductListingPage} />
       <Route exact path="/listing/mobile" render={() => <h1>Mobile Listing</h1>} />
+      <Route exact path="/sign-up" component={Register} />
       <Route path="*" render={() => <h1>404 - Not Found</h1>} />
     </Switch>
   )

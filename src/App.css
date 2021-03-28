@@ -6,3 +6,34 @@
   width: 100%;
 }
 
+.LoaderButton .spinning {
+  margin-right: 7px;
+  top: 2px;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: scale(1) rotate(0deg);
+  }
+  to {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+.Register{
+  margin: 0px 500px;
+  padding: 50px;
+  border: 1px solid red;
+  border-radius: 30px;
+  background: linear-gradient(to left, #ab68ca, #de67a3);
+}
+.form-label{
+  font-size: 25px;
+  color: #ffffff;
+  font-family: serif;
+  font-weight: 600
+}
+button.btn-success.disabled, .btn-success:disabled, .btn-success{
+  background-color: none;
+}
