@@ -14,7 +14,7 @@ const ProductCard = ({
       <Card.Body>
         <div className="product-card-image" style={{ backgroundImage: `url(${image})` }} />
         <Card.Title>{name}</Card.Title>
-        <h4>{price}</h4>
+        <h4>€ {price}</h4>
         <Button variant="primary" onClick={onAdd2Cart}>Add to Cart</Button>
       </Card.Body>
     </Card>
