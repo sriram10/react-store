@@ -1,3 +1,7 @@
+.feed {
+  width: 100%;
+  float: left;
+}
 .feed h2, .feed h3 {
   color: #000;
   margin: .5em 0;
