@@ -9,6 +9,8 @@ import {
 import RoutesContainer from './components/RoutesContainer';
 import PageTitle from './components/PageTitle';
 import GoBackButton from './components/GoBackButton';
+import {Navbar, Nav} from 'react-bootstrap';
+import CartBadge from './components/Badge';
 
 
 function App() {
@@ -16,12 +18,15 @@ function App() {
     <BrowserRouter>
       <PageTitle name="Store" />
       <div>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/faq">FAQ</Link></li>
-          <li><Link to="/products">Products</Link></li>
-        </ul>
+        <Navbar bg="primary" variant="dark">
+    <Nav className="mr-auto">
+      <Nav.Link href="/">Home</Nav.Link>
+      <Nav.Link href="/about">About</Nav.Link>
+      <Nav.Link href="/faq">FAQ</Nav.Link>
+      <Nav.Link href="/products">Products</Nav.Link>
+      <CartBadge count={localStorage.getItem('cartCount')}/> 
+    </Nav>
+  </Navbar>
         <GoBackButton />
         {/* <ProductListingPage /> */}
       </div>
