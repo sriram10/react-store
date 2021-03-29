@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { productList } from '../assets/productsList';
 import CategoryFilter from '../components/CategoryFilter';
 import ProductCard from '../components/ProductCard';
@@ -15,7 +16,9 @@ import ProductCard from '../components/ProductCard';
 
 class ProductListingPage extends Component {
   state = {
-    data: []
+    data: [],
+    minvalue:100,
+    maxvalue:500
   }
 
   componentDidMount() {
@@ -26,7 +29,8 @@ class ProductListingPage extends Component {
   }
 
   onProductClick = (product = {}) => {
-    alert(product?.name)
+    const { history, match, location } = this.props;
+    history.push(`/products/${product.name}/${product.id}`)
   }
 
   onAdd2Cart = (product = {}) => {
@@ -59,6 +63,17 @@ class ProductListingPage extends Component {
     })
   }
 
+minchange = (e) => {
+  this.setState({
+    minvalue: e.target.value
+  });
+}
+maxchange = (e) => {
+  this.setState({
+    maxvalue: e.target.value
+  });
+}
+
   render() {
     
     return (
@@ -72,11 +87,17 @@ class ProductListingPage extends Component {
               />
           </Col>
         </Row>
+        <br/>
+        <div className="filter">
+        <input type="text" placeholder="Minvalue (200)" onChange={this.minchange}/>&nbsp;
+        <input type="text" placeholder="Maxvalue (400)" onChange={this.maxchange}/>
+        </div>
+        <br/>
         <Row>
           {
             Array.isArray(this.state.data) &&
             this.state.data
-              .filter(product => this.state.selectedCategories.length ? this.state.selectedCategories.includes(product.category) : true)
+              .filter(product => this.state.selectedCategories.length ? this.state.selectedCategories.includes(product.category) :((product.variants?.[0].price > this.state.minvalue)&&(product.variants?.[0].price < this.state.maxvalue)))
               .map(product => {
               return (
                 <Col key={product.id}>
@@ -86,8 +107,6 @@ class ProductListingPage extends Component {
                     image={product.image}
                     price={product.price ? product.price : product.variants?.[0].price}
                     onClick={(e) => {
-                      e.preventDefault()
-                      e.stopPropagation()
                       this.onProductClick(product)
                     }}
                     onAdd2Cart={(e) => {

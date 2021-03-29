@@ -5,4 +5,12 @@
   height: 180px;
   width: 100%;
 }
-
+.error
+{
+  color: red;
+  font-size: 12px;
+}
+.Login,.Register
+{
+  padding-top: 20px;
+}
