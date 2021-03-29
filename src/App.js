@@ -20,6 +20,10 @@ function App() {
           <li><Link to="/">Home</Link></li>
           <li><Link to="/about">About</Link></li>
           <li><Link to="/faq">FAQ</Link></li>
+          <li><Link to="/login">LOGIN</Link></li>
+          <li><Link to="/FormValidation">Register Form</Link></li>
+          <li><Link to="/Carouselpage">Products We Sell</Link></li>
+          <li><Link to="/TabbedProduct">Recommended Brands</Link></li>
           <li><Link to="/products">Products</Link></li>
         </ul>
         <GoBackButton />
