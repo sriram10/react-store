@@ -3,7 +3,10 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import AboutPage from '../pages/AboutPage';
+import ContactPage from '../pages/ContactPage';
 import FaqPage from '../pages/FaqPage';
+import HomePage from '../pages/HomePage';
 import ProductListingPage from '../pages/ProductListingPage';
 import Login from './Login';
 import LoginWithFormik from './LoginWithFormik';
@@ -13,9 +16,10 @@ import PageTitle from './PageTitle';
 const RoutesContainer = () => {
   return (
     <Switch>
-      <Route exact path="/" render={() => <h1>Home</h1>} />
+      <Route exact path="/" component={HomePage} />
       <Route exact path="/login" render={() => <LoginWithFormik />} />
-      <Route exact path="/about" render={() => <h1>About</h1>} />
+      <Route exact path="/about" component={AboutPage} />
+      <Route exact path="/contact" component={ContactPage} />
       <Route exact path="/faq" component={FaqPage} />
       <Route exact path="/products" component={ProductListingPage} />
       <Route exact path="/products/:product/:id?" render={(props) => {

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { faqData } from '../assets/faqData';
+import Layout from '../components/Layout';
 import PageTitle from '../components/PageTitle';
 
 class Accordion extends React.Component {
@@ -80,19 +81,20 @@ class FaqPage extends React.Component {
 	
 	render() {
 		const { activeTab, panels } = this.state;
-    console.log('FAQ >> ', this.props)
-		return (
-			<div className='accordion' role='tablist'>
-				{panels.map((panel, index) =>
-					<Accordion
-						key={ index }
-						activeTab={ activeTab }
-						index={ index }
-						{ ...panel } 
-						activateTab={ this.activateTab.bind(null, index) }
-					/>
-				)}
-			</div>
+    return (
+			<Layout title="FAQ Page">
+				<div className='accordion' role='tablist'>
+					{panels.map((panel, index) =>
+						<Accordion
+							key={ index }
+							activeTab={ activeTab }
+							index={ index }
+							{ ...panel } 
+							activateTab={ this.activateTab.bind(null, index) }
+						/>
+					)}
+				</div>
+			</Layout>
 		);
 	}
 }

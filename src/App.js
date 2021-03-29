@@ -14,7 +14,7 @@ function App() {
   return (
     <BrowserRouter>
       <PageTitle name="Store" />
-      <div>
+      {/* <div>
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/login">Login</Link></li>
@@ -27,11 +27,21 @@ function App() {
           <li><Link to="/products">Products</Link></li>
         </ul>
         <GoBackButton />
-        {/* <ProductListingPage /> */}
-      </div>
+        <ProductListingPage />
+      </div> */}
       <RoutesContainer />
     </BrowserRouter>
   );
 }
 
 export default App;
+
+/**
+ * Day 4
+ * 
+ * Redux - Core (redux)
+ * Redux with React - react-redux
+ * Maintaining a global state in React Apps 
+ * Persisting things in Store - redux-persist
+ * Authentication flow
+ */
