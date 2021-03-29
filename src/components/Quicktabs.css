@@ -1,12 +1,14 @@
 #quicktabs-container {
   margin-top: 1em;
+  float: left;
+  width: 100%;
 }
 #quicktabs-container h1 {
   text-align: center;
   font-weight: bold;
 }
 #quicktabs {
-  width: 90%;
+  width: 96%;
   margin-left: 1em;
   margin-right: 1em;
   margin-top: 10px;
