@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { productList } from '../assets/productsList';
 import CategoryFilter from '../components/CategoryFilter';
 import ProductCard from '../components/ProductCard';
+import CartBadge from '../components/Badge';
 
 /**
  * Page contains
@@ -16,13 +17,15 @@ import ProductCard from '../components/ProductCard';
 
 class ProductListingPage extends Component {
   state = {
-    data: []
+    data: [],
+    count:0
   }
 
   componentDidMount() {
     this.setState({
       data: productList.data,
       selectedCategories: [],
+      count:0
     })
   }
 
@@ -33,6 +36,9 @@ class ProductListingPage extends Component {
 
   onAdd2Cart = (product = {}) => {
     alert(product?.id)
+    this.setState({count: this.state.count + 1}, ()=> {
+      localStorage.setItem('cartCount', this.state.count);
+    } )
   }
 
   getCategoriesList = () => {
@@ -62,7 +68,6 @@ class ProductListingPage extends Component {
   }
 
   render() {
-    
     return (
       <Container>
         <Row>
