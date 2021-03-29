@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import { productList } from '../assets/productsList';
 import CategoryFilter from '../components/CategoryFilter';
 import ProductCard from '../components/ProductCard';
@@ -27,8 +26,7 @@ class ProductListingPage extends Component {
   }
 
   onProductClick = (product = {}) => {
-    const { history, match, location } = this.props;
-    history.push(`/products/${product.name}/${product.id}`)
+    alert(product?.name)
   }
 
   onAdd2Cart = (product = {}) => {
@@ -88,6 +86,8 @@ class ProductListingPage extends Component {
                     image={product.image}
                     price={product.price ? product.price : product.variants?.[0].price}
                     onClick={(e) => {
+                      e.preventDefault()
+                      e.stopPropagation()
                       this.onProductClick(product)
                     }}
                     onAdd2Cart={(e) => {

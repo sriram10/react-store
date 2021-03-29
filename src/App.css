@@ -5,4 +5,47 @@
   height: 180px;
   width: 100%;
 }
-
+.hamburger{
+  margin: 30px 0;
+  padding: 0 20px;
+  background-color: salmon;
+}
+.hamburger ul li{
+    display: inline-block;
+    padding: 15px 15px;
+    
+}
+li a{
+  text-decoration: none;
+  color: white;
+}
+.hamburger li:hover{
+  background-color: seagreen;
+}
+Form{
+  width: 45%;
+  margin-left: 25%;
+}
+Form > Button{
+  margin-left: 30%;
+}
+Form > em{
+  margin-left: 30%;
+  font-size: 25px;
+  background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)';
+  color: blue;
+}
+.App{
+  padding-left: 245px;
+}
+.MyApp{
+  width: 40%;
+  height: 35%;
+  margin-left: 20%;
+}
+.box{
+  margin-left: 50%;
+}
+.box > .row{
+  margin-left: 2%;
+}

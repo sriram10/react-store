@@ -6,7 +6,7 @@ const GoBackButton = () => {
   return (
     <Button onClick={() => {
       history.goBack()
-    }}>&lt; Go Back</Button>
+    }}>Go Back</Button>
   )
 }
 export default GoBackButton
