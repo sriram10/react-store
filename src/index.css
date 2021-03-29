@@ -20,7 +20,6 @@ code {
   box-sizing: inherit;
 }
 body {
-  display: flex;
   justify-content: center;
   padding: 50px 0;
   background-color: #fcfcfc;
@@ -33,8 +32,8 @@ body {
   overflow-y: scroll;
 }
 .accordion {
-  width: 100%;
-  max-width: 470px;
+  width: 90%;
+  margin: 0 auto;
 }
 .panel {
   background-color: #f0ebe1;

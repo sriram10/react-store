@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { productList } from '../assets/productsList';
 import CategoryFilter from '../components/CategoryFilter';
 import ProductCard from '../components/ProductCard';
@@ -27,7 +27,7 @@ class ProductListingPage extends Component {
   }
 
   onProductClick = (product = {}) => {
-    const { history, match, location } = this.props;
+    const { history} = this.props;
     history.push(`/products/${product.name}/${product.id}`)
   }
 
